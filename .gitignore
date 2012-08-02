@@ -7,9 +7,13 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore images uploaded in Test and Development environments
+/public/system
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+*.swp
