@@ -2,7 +2,7 @@
 
 ### Reference Application
 
-Demo Ruby on Rails application allows users to manage a list of “friends” using a basic Rails scaffold. Each friend will have a Name and Avatar. Paperclip will provide the image upload and resizing functionality. The app will demonstrate how to create different sized thumbnails, display resized images on different screens, and gracefully degrade to display “missing_avatar.png” for friends without an avatar.
+Application allows users to manage a list of “friends” using a basic Rails scaffold. Each friend will have a Name and Avatar. Paperclip will provide the image upload and resizing functionality. The app will demonstrate how to create different sized thumbnails, display resized images on different screens, and gracefully degrade to display missing avatars “missing.png” for friends without an avatar.
 
 ### Install Codebase
 
@@ -12,7 +12,13 @@ Clone the git repository
     $ cd paperclip_demo
     $ bundle
 
+### Database Migrations
+
+    $ rake db:migrate
+
 ### Run Application
+
+Run the rails server
 
     $ rails s
 
@@ -41,3 +47,9 @@ Set the AWS S3 config vars
     $ heroku config:add AWS_SECRET_ACCESS_KEY=your_secret_access_key
     
 From a web browser access your Heroku application
+
+## Test suite
+
+RSpec and Capybara used for Integration and Unit tests
+
+    $ rspec
