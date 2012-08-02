@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= image_tag("logo.png") %>
+    <h1>Paperclip on Heroku Demo</h1>
+  </header>
 
-<%= yield %>
+<div id="main-wrap">
+  <%= yield %>
+</div>
 
 </body>
 </html>
