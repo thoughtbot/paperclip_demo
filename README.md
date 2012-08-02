@@ -12,11 +12,9 @@ Clone the git repository
     $ cd paperclip_demo
     $ bundle
 
-### Database Migrations
+Run any database migrations
 
     $ rake db:migrate
-
-### Run Application
 
 Run the rails server
 
