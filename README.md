@@ -44,7 +44,9 @@ Set the AWS S3 config vars
     $ heroku config:add AWS_ACCESS_KEY_ID=your_access_key_id
     $ heroku config:add AWS_SECRET_ACCESS_KEY=your_secret_access_key
     
-From a web browser access your Heroku application
+Now view your Heroku application
+
+    $ heroku open
 
 ## Test suite
 
