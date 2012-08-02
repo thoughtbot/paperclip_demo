@@ -1,25 +1,13 @@
-<h1>Listing friends</h1>
+<h2>Make a new friend <%= link_to 'New Friend', new_friend_path, class: 'new-friend' %></h2>
 
-<table>
-  <tr>
-    <th>Avatar</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @friends.each do |friend| %>
-  <tr>
-    <td><%= image_tag friend.avatar.url(:thumb) %>
-    <td><%= friend.name %></td>
-    <td><%= link_to 'Show', friend %></td>
-    <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-    <td><%= link_to 'Destroy', friend, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Friend', new_friend_path %>
+<section id="friends">
+  <% @friends.each do |friend| %>
+    <div class="friend" id="<%= friend.id %>">
+      <%= link_to 'x', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
+      <%= link_to friend, class: 'pic-link' do %>
+        <%= image_tag friend.avatar.url(:thumb) %>
+      <% end %>
+      <span><%= link_to friend.name, friend, class: 'friend-name' %></span>
+    </div>
+  <% end %>
+</section>

@@ -1,0 +1,68 @@
+$color-1: #333;
+$color-2: #F4F4F4;
+$color-3: #F27D31; // orange
+$color-4: #fff;
+$color-5: #999;
+$color-6: #000;
+
+// Base Styles
+// ----------------------------------------
+
+div#main-wrap {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+header {
+  margin: 20px 0;
+}
+
+a.new-friend {
+  background-color: $color-3;
+  color: $color-4;
+  padding: .3em .6em;
+  text-decoration: none;
+}
+
+// Friend
+// ----------------------------------------
+
+div.friend {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    a.destroy {
+      display: block;
+    }
+  }
+
+  a.destroy {
+    background: $color-3;
+    border-radius: 10px;
+    color: $color-2;
+    display: none;
+    height: 20px;
+    position: absolute;
+    right: -5px;
+    text-align: center;
+    text-decoration: none;
+    top: -5px;
+    width: 20px;
+    z-index: 100;
+  }
+
+  a.pic-link {
+    display: block;
+  }
+
+  img {
+    border: 1px solid $color-2;
+    padding: 5px;
+  }
+
+  a.friend-name {
+    color: $color-1;
+    text-decoration: none;
+  }
+}
