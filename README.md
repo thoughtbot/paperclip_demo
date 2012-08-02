@@ -22,7 +22,7 @@ From a web browser access the site via [localhost:3000](http://localhost:3000)
 
 ## Deploy the application to Heroku
 
-Create an application container on Heroku (watch for your container url)
+Create an application container on Heroku
 
     $ heroku create
 
@@ -39,3 +39,5 @@ Set the AWS S3 config vars
     $ heroku config:add AWS_BUCKET=your_bucket_name
     $ heroku config:add AWS_ACCESS_KEY_ID=your_access_key_id
     $ heroku config:add AWS_SECRET_ACCESS_KEY=your_secret_access_key
+    
+From a web browser access your Heroku application
