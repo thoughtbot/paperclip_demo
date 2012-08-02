@@ -11,4 +11,14 @@ feature 'visitor adds a new friend' do
     page.should have_css('p', text: 'Mona Lisa')
     page.should have_xpath("//img[contains(@src, 'mona_lisa.jpg')]")
   end
+
+  scenario 'add friend without image' do
+    visit root_path
+    click_link 'New Friend'
+    fill_in 'Name', with: 'Mona Lisa'
+    click_button 'Create Friend'
+
+    page.should have_css('p', text: 'Mona Lisa')
+    page.should have_xpath("//img[contains(@src, 'missing.png')]")
+  end
 end
