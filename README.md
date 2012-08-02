@@ -51,3 +51,17 @@ From a web browser access your Heroku application
 RSpec and Capybara used for Integration and Unit tests
 
     $ rspec
+    
+Credits
+-------
+
+![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
+
+Paperclip Demo is maintained by [thoughtbot, inc](http://thoughtbot.com/community)
+
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+License
+-------
+
+Trail Map is licensed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/).
