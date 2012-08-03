@@ -31,6 +31,7 @@ header {
   margin: 30px auto 50px;
   padding: 0 40px;
   width: 1040px;
+  position: relative;
 
   div.header-wrap {
     border-bottom: 1px solid $color-2;
@@ -42,6 +43,19 @@ header {
       a {
         color: $color-1;
       }
+    }
+  }
+
+  a.fork_me {
+    background: url(github.png) no-repeat;
+    padding-left: 25px;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    color: #000;
+
+    &:hover {
+      color: #AD141E;
     }
   }
 
