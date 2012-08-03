@@ -28,7 +28,7 @@ body {
 
 header {
   background: transparent url(logo.png) no-repeat 40px 20px;
-  margin: 30px auto 50px;
+  margin: 30px auto 0px auto;
   padding: 0 40px;
   width: 1040px;
   position: relative;
@@ -58,17 +58,11 @@ header {
       color: #AD141E;
     }
   }
-
-  hr {
-    background: url(shadowing.png) no-repeat top center;
-    width: 100%;
-    height: 10px;
-    margin: 0px;
-    border: none;
-  }
 }
 
 div#main-wrap {
+  background: url(shadowing.png) no-repeat top center;
+  padding-top: 40px;
   margin: 0 auto;
   width: 1000px;
 
