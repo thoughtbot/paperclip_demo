@@ -1,6 +1,6 @@
 $color-1: #444;
-$color-2: #eee;
-$color-3: #B32216; // red
+$color-2: gainsboro;
+$color-3: #B32216;
 $color-4: #999;
 $color-5: white;
 
@@ -22,19 +22,13 @@ $color-5: white;
 
 // Base Styles
 // ----------------------------------------
-
-div#main-wrap {
-  margin: 0 auto;
-  width: 1000px;
-
-  h2 {
-    margin-bottom: 50px;
-  }
+body {
+  border-top: 4px solid #AD141E;
 }
 
 header {
-  background: transparent url(logo.png) no-repeat 40px center;
-  margin: 20px auto 50px;
+  background: transparent url(logo.png) no-repeat 40px 20px;
+  margin: 30px auto 50px;
   padding: 0 40px;
   width: 1040px;
 
@@ -50,6 +44,23 @@ header {
       }
     }
   }
+
+  hr {
+    background: url(shadowing.png) no-repeat top center;
+    width: 100%;
+    height: 10px;
+    margin: 0px;
+    border: none;
+  }
+}
+
+div#main-wrap {
+  margin: 0 auto;
+  width: 1000px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
 }
 
 a.new-friend {
@@ -63,10 +74,28 @@ a.new-friend {
   }
 }
 
+footer {
+  margin: 50px auto;
+  width: 1000px;
+
+  a {
+    color: $color-4;
+    border-bottom: 1px dotted;
+  }
+
+  p {
+    color: $color-4;
+    font: 400 12px helvetica neue, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
 // Friend
 // ----------------------------------------
-
-
 section#friends {
   font-size: 0;
 }
@@ -146,7 +175,6 @@ div.actions {
 
 // Forms
 // ----------------------------------------
-
 input {
   font-size: 16px;
   padding: 5px 0;
@@ -181,9 +209,9 @@ form {
     }
   }
 }
+
 // Other
 // ----------------------------------------
-
 aside {
   color: $color-4;
   font-size: 10px;
