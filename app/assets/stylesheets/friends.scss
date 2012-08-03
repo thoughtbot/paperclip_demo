@@ -1,9 +1,24 @@
-$color-1: #333;
-$color-2: #F4F4F4;
-$color-3: #F27D31; // orange
-$color-4: #fff;
-$color-5: #999;
-$color-6: #000;
+$color-1: #444;
+$color-2: #eee;
+$color-3: #B32216; // red
+$color-4: #999;
+$color-5: white;
+
+// Mixins
+// ----------------------------------------
+
+@mixin prefixer ($property, $value,
+                 $webkit: true,
+                    $moz: true,
+                     $ms: true,
+                      $o: true,
+                   $spec: true) {
+  @if $webkit { -webkit-#{$property}: $value; }
+  @if $moz    {    -moz-#{$property}: $value; }
+  @if $ms     {     -ms-#{$property}: $value; }
+  @if $o      {      -o-#{$property}: $value; }
+  @if $spec   {         #{$property}: $value; }
+}
 
 // Base Styles
 // ----------------------------------------
@@ -11,58 +26,166 @@ $color-6: #000;
 div#main-wrap {
   margin: 0 auto;
   width: 1000px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
 }
 
 header {
-  margin: 20px 0;
+  background: transparent url(logo.png) no-repeat 40px center;
+  margin: 20px auto 50px;
+  padding: 0 40px;
+  width: 1040px;
+
+  div.header-wrap {
+    border-bottom: 1px solid $color-2;
+    padding: 20px;
+
+    h1 {
+      padding-left: 80px;
+
+      a {
+        color: $color-1;
+      }
+    }
+  }
 }
 
 a.new-friend {
   background-color: $color-3;
-  color: $color-4;
+  color: $color-5;
+  font-weight: bold;
   padding: .3em .6em;
-  text-decoration: none;
+
+  &:hover {
+    background-color: lighten($color-3, 5%);
+  }
 }
 
 // Friend
 // ----------------------------------------
 
+
+section#friends {
+  font-size: 0;
+}
+
 div.friend {
   display: inline-block;
+  font-size: 12px;
   position: relative;
+  height: 200px;
+  width: 200px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+
+  a {
+    color: $color-1;
+  }
+
+  & > div {
+    left: 0;
+    position: absolute;
+    top: 0;
+    @include prefixer(transition, all .6s ease-in-out);
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+  }
 
   &:hover {
-    a.destroy {
-      display: block;
+    div.front {
+      -webkit-transform: rotateY(180deg);
+    }
+
+    div.back {
+      z-index: 1000;
+      -webkit-transform: rotateY(0deg);
     }
   }
 
-  a.destroy {
-    background: $color-3;
-    border-radius: 10px;
-    color: $color-2;
-    display: none;
-    height: 20px;
+  div.front {
+    z-index: 900;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+
+  }
+
+  div.back {
+    background: $color-2;
+    @include prefixer(box-sizing, border-box);
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+
     position: absolute;
-    right: -5px;
-    text-align: center;
-    text-decoration: none;
-    top: -5px;
-    width: 20px;
-    z-index: 100;
+    top: 0;
+    left: 0;
+
+    @include prefixer(transform, rotateY(-180deg));
+    z-index: 800;
   }
 
-  a.pic-link {
-    display: block;
+  span.friend-name {
+    font-size: 16px;
   }
+}
 
-  img {
-    border: 1px solid $color-2;
-    padding: 5px;
-  }
+div.actions {
+  margin: 12px 0 0 0;
 
-  a.friend-name {
-    color: $color-1;
-    text-decoration: none;
+  a {
+    @extend a.new-friend;
+    color: $color-5;
   }
+}
+
+// Forms
+// ----------------------------------------
+
+input {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+input[type=text] {
+  border: 1px solid $color-4;
+  outline: none;
+  padding: 5px;
+
+  &:focus {
+    @include prefixer(box-shadow, inset 0 0 5px #ddd);
+  }
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+.field {
+  margin-bottom: 1.3em;
+}
+
+form {
+  .actions {
+    margin-left: 100px;
+
+    input[type=submit], a.button {
+      @extend a.new-friend;
+      border: none;
+    }
+  }
+}
+// Other
+// ----------------------------------------
+
+aside {
+  color: $color-4;
+  font-size: 10px;
+  margin-top: 16px;
 }
