@@ -12,14 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :avatar %><br />
+    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Make a friend' %>
+    <%= link_to 'Nevermind', friends_path, class: 'button' %>
   </div>
 <% end %>

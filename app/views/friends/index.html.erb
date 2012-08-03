@@ -3,11 +3,19 @@
 <section id="friends">
   <% @friends.each do |friend| %>
     <div class="friend" id="<%= friend.id %>">
-      <%= link_to 'x', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
-      <%= link_to friend, class: 'pic-link' do %>
-        <%= image_tag friend.avatar.url(:thumb) %>
-      <% end %>
-      <span><%= link_to friend.name, friend, class: 'friend-name' %></span>
+      <div class="front">
+        <%= link_to friend, class: 'pic-link' do %>
+          <%= image_tag friend.avatar.url(:square) %>
+        <% end %>
+      </div>
+      <div class="back">
+        <span class="friend-name"><%= friend.name %></span>
+        <div class="actions">
+          <%= link_to 'Show', friend %>
+          <%= link_to 'Edit', edit_friend_path(friend) %>
+          <%= link_to 'Delete', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
+        </div>
+      </div>
     </div>
   <% end %>
 </section>
