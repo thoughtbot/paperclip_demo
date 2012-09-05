@@ -1,0 +1,16 @@
+<div class="friend" id="<%= friend.id %>">
+  <div class="front">
+    <%= link_to friend, class: 'pic-link' do %>
+      <%= image_tag friend.avatar.url(:square) %>
+    <% end %>
+  </div>
+
+  <div class="back">
+    <span class="friend-name"><%= friend.name %></span>
+    <div class="actions">
+      <%= link_to 'Show', friend %>
+      <%= link_to 'Edit', edit_friend_path(friend) %>
+      <%= link_to 'Delete', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
+    </div>
+  </div>
+</div>
