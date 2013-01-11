@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '~> 3.2.11'
 
 gem 'aws-sdk', '~> 1.6.0'
 gem 'jquery-rails'
-gem 'paperclip', '~> 3.1.4'
+gem 'paperclip', '~> 3.4.0'
 gem 'pg'
 
 group :assets do
@@ -15,6 +15,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'launchy'
 end
 
 group :test do
