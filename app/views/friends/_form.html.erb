@@ -1,26 +1,24 @@
-<%= form_for(@friend) do |f| %>
-  <% if @friend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+<% if form.object.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(form.object.errors.count, "error") %> prohibited this friend from being saved:</h2>
 
-      <ul>
-      <% @friend.errors.full_messages.each do |msg| %>
+    <ul>
+      <% form.object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Make a friend' %>
-    <%= link_to 'Nevermind', friends_path, class: 'button' %>
+    </ul>
   </div>
 <% end %>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<div class="field">
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+</div>
+<div class="actions">
+  <%= form.submit 'Make a friend' %>
+  <%= link_to 'Nevermind', friends_path, class: 'button' %>
+</div>
