@@ -1,17 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 4.0.0'
 
-gem 'aws-sdk', '~> 1.6.0'
+gem 'aws-sdk'
+gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'paperclip', '~> 4.1.x'
+gem 'paperclip'
 gem 'pg'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'rspec-rails'

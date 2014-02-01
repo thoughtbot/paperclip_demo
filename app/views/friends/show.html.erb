@@ -5,6 +5,6 @@
 
 <div class="show actions">
   <%= link_to 'Edit', edit_friend_path(@friend) %>
-  <%= link_to 'Remove', @friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
+  <%= link_to 'Remove', @friend, data: { confirm: 'Are you sure you want to lose a friend?' }, method: :delete, class: 'destroy' %>
   <%= link_to 'Back to all my friends', friends_path %>
 </div>
