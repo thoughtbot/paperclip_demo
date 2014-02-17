@@ -4,7 +4,7 @@ gem 'rails', '~> 3.2.13'
 
 gem 'aws-sdk', '~> 1.6.0'
 gem 'jquery-rails'
-gem 'paperclip', '~> 3.5.0'
+gem 'paperclip', '~> 4.1.x'
 gem 'pg'
 
 group :assets do

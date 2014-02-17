@@ -8,6 +8,7 @@ class Friend < ActiveRecord::Base
     medium: '300x300>'
   }
 
-  validates_attachment :avatar, :content_type => { :content_type => "image/jpg" }
+  validates_attachment :avatar,
+    :content_type => { :content_type => /image\/jpe?g/ }
 
 end
