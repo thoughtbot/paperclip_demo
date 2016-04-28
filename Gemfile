@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "~> 4.2.0"
 
-gem "aws-sdk", "< 2.0"
+gem "aws-sdk", "~> 2.3"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "paperclip"
