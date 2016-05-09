@@ -20,7 +20,7 @@ PaperclipDemo::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_files = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -80,12 +80,13 @@ PaperclipDemo::Application.configure do
 
   # Amazon S3 settings for Paperclip uploads
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_protocol => 'http',
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    storage: :s3,
+    s3_protocol: 'http',
+    s3_credentials: {
+      bucket: ENV.fetch("AWS_BUCKET"),
+      access_key_id: ENV.fetch("AWS_ACCESS_KEY_ID"),
+      secret_access_key: ENV.fetch("AWS_SECRET_ACCESS_KEY"),
+      s3_region: ENV.fetch("AWS_REGION"),
     }
   }
 end

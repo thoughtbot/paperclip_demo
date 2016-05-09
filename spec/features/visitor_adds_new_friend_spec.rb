@@ -8,8 +8,8 @@ feature 'visitor adds a new friend' do
     attach_file 'Avatar', fixture_image_path
     click_button 'Make a friend'
 
-    page.should have_css('h2', text: 'Mona Lisa')
-    page.should have_xpath("//img[contains(@src, 'mona_lisa.jpg')]")
+    expect(page).to have_css('h2', text: 'Mona Lisa')
+    expect(page).to have_xpath("//img[contains(@src, 'mona_lisa.jpg')]")
   end
 
   scenario 'add friend without image' do
@@ -18,8 +18,8 @@ feature 'visitor adds a new friend' do
     fill_in 'Name', with: 'Mona Lisa'
     click_button 'Make a friend'
 
-    page.should have_css('h2', text: 'Mona Lisa')
-    page.should have_xpath("//img[contains(@src, 'missing.png')]")
+    expect(page).to have_css('h2', text: 'Mona Lisa')
+    expect(page).to have_xpath("//img[contains(@src, 'missing.png')]")
   end
 
   def fixture_image_path
