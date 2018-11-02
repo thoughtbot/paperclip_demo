@@ -1,4 +1,10 @@
-## Paperclip Demo
+# Paperclip Demo
+
+## Deprecated
+
+**[Paperclip is deprecated]**.
+
+[Paperclip is deprecated]: https://robots.thoughtbot.com/closing-the-trombone
 
 ### Reference Application
 
